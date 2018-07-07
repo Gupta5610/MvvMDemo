@@ -143,22 +143,22 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS11.0/GTMSessionFetcher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS11.0/GoogleToolboxForMac.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift-iOS11.0/IQKeyboardManagerSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Protobuf-iOS11.0/Protobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper-iOS11.0/SwiftKeychainWrapper.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library-iOS11.0/leveldb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/nanopb-iOS11.0/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS11.0/GTMSessionFetcher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS11.0/GoogleToolboxForMac.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift-iOS11.0/IQKeyboardManagerSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Protobuf-iOS11.0/Protobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper-iOS11.0/SwiftKeychainWrapper.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library-iOS11.0/leveldb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/nanopb-iOS11.0/nanopb.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
