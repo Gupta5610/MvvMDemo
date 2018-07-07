@@ -11,9 +11,9 @@ import Foundation
 class UserListViewModel {
     
     var userList = [UserViewModel]()
-    var dataService : DataService!
+    var dataService : DataServiceProtocol!
     
-    init(dataService : DataService) {
+    init(dataService : DataServiceProtocol) {
         self.dataService = dataService
     }
     

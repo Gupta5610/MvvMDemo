@@ -10,19 +10,24 @@ import Foundation
 
 class DataService : DataServiceProtocol {
     
-    public private(set) static var instance = DataService()
+    public private(set) static var instance = DataService(webService : WebService.instance)
     
+    init(webService : WebServiceProtocol) {
+        self.webService = webService
+    }
+    
+    private var webService : WebServiceProtocol!
     
     func post(user : User , to databseReference : String){
         var userParameter = [String : String]()
         userParameter["email"] = user.email!
         userParameter["number"] = user.phoneNumber!
-        WebService.instance.post(parameter: userParameter, to: databseReference)
+        webService.post(parameter: userParameter, to: databseReference)
     }
     
     func observeUsers(from databaseReference : String , completion : @escaping ([User]?) -> (Void)){
         
-        WebService.instance.observe(databaseReference: databaseReference) { (dataDictionary) -> (Void) in
+        webService.observe(databaseReference: databaseReference) { (dataDictionary) -> (Void) in
             guard let dataDictionary = dataDictionary else { return }
             var users = [User]()
             dataDictionary.forEach({(key,value) in

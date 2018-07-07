@@ -11,7 +11,19 @@
 import Foundation
 import FirebaseDatabase
 
-class FirebaseHandler {
+protocol FirebaseProtocol {
+    func singIn(userName : String?,password : String? , completion :@escaping (Bool,String?) -> Void)
+    func registerUser(userName : String?,password : String? , completion : @escaping (Bool,String?) -> Void)
+    func signOut(completion : @escaping (Bool,String?) -> Void)
+    func post(parameter : [String : Any] , to : String)
+    func observe(databaseReference : String , completion : @escaping ([String : Any]?) -> (Void))
+    func subscribe(to topic : String)
+    func unSubscribe(from topic : String)
+}
+
+
+
+class FirebaseHandler : FirebaseProtocol {
     
     private(set) static var instance = FirebaseHandler()
 
@@ -39,7 +51,7 @@ class FirebaseHandler {
     
     func observe(databaseReference : String , completion : @escaping ([String : Any]?) -> (Void)){
         FIRDatabaseService.instance.observe(FIRDatabaseReference.init(with: databaseReference)!) { (dataSnapshot) -> (Void) in
-            completion(dataSnapshot?.value as! [String : Any])
+            completion(dataSnapshot?.value as? [String : Any])
         }
     }
     

@@ -9,12 +9,18 @@
 import Foundation
 import Firebase
 
-class AuthenticationService {
+class AuthenticationService : AuthenticationServiceProtocol {
     
-    public private(set) static var instance = AuthenticationService();
+    public private(set) static var instance = AuthenticationService(webService: WebService.instance);
+    
+    init(webService : WebServiceProtocol) {
+        self.webService = webService
+    }
+    
+    private var webService : WebServiceProtocol!
     
     public func AuthenticateUser(user : User , completion : @escaping (Bool,String?) -> Void ){
-        WebService.instance.AuthenticateUser(user:user, completion: { (status,error) in
+        webService.AuthenticateUser(user:user, completion: { (status,error) in
                 completion(status,error);
         })
     }

@@ -10,17 +10,23 @@ import Foundation
 
 
 class WebService : WebServiceProtocol {
-    public private(set) static var instance = WebService();
+    public private(set) static var instance = WebService(firebaseHandler: FirebaseHandler.instance);
+    
+    var firebaseHandler : FirebaseProtocol!
+    
+    init(firebaseHandler : FirebaseProtocol) {
+        self.firebaseHandler = firebaseHandler
+    }
     
     func AuthenticateUser(user : User , completion : @escaping (Bool,String?) -> Void ){
-        FirebaseHandler.instance.singIn(userName: user.email, password: user.password, completion: { (status,error) in
+        firebaseHandler.singIn(userName: user.email, password: user.password, completion: { (status,error) in
             completion(status,error);
             
         })
     }
     
     func registerUser(user : User , completion :@escaping (Bool,String?) -> Void){
-        FirebaseHandler.instance.registerUser(userName: user.email, password: user.password) { (status,error) in
+        firebaseHandler.registerUser(userName: user.email, password: user.password) { (status,error) in
             DispatchQueue.main.async {
                 completion(status,error);
             }
@@ -28,7 +34,7 @@ class WebService : WebServiceProtocol {
     }
     
     func signOut(completion : @escaping (Bool,String?) -> Void){
-        FirebaseHandler.instance.signOut { (status, error) in
+        firebaseHandler.signOut { (status, error) in
             DispatchQueue.main.async {
                 completion(status,error);
             }
@@ -36,11 +42,11 @@ class WebService : WebServiceProtocol {
     }
     
     func post(parameter : [String : Any] , to  databaseReference: String ){
-        FirebaseHandler.instance.post(parameter: parameter, to: databaseReference)
+        firebaseHandler.post(parameter: parameter, to: databaseReference)
     }
     
     func observe(databaseReference : String , completion : @escaping ([String : Any]?) -> (Void)){
-        FirebaseHandler.instance.observe(databaseReference: databaseReference) { (dataDictionary) -> (Void) in
+        firebaseHandler.observe(databaseReference: databaseReference) { (dataDictionary) -> (Void) in
             DispatchQueue.main.async {
                 completion(dataDictionary)
             }
@@ -48,11 +54,11 @@ class WebService : WebServiceProtocol {
     }
     
     func subscribeNotification(to topic : String){
-        FirebaseHandler.instance.subscribe(to: topic)
+        firebaseHandler.subscribe(to: topic)
     }
     
     func unSubscribeNotification(from topic : String){
-        FirebaseHandler.instance.unSubscribe(from : topic)
+        firebaseHandler.unSubscribe(from : topic)
     }
     
 }

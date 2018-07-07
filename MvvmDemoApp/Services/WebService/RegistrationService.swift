@@ -10,10 +10,16 @@ import Foundation
 
 class RegistrationService : RegistrationServiceProtocol {
     
-    private(set) static var instance = RegistrationService();
+    private(set) static var instance = RegistrationService(webService: WebService.instance);
+    
+    init(webService : WebServiceProtocol) {
+        self.webService = webService
+    }
+    
+    private var webService : WebServiceProtocol!
     
     func registerUser(user : User , completion :@escaping (Bool,String?) -> Void){
-        WebService.instance.registerUser(user : user) { (status,error) in
+        webService.registerUser(user : user) { (status,error) in
             DispatchQueue.main.async {
                 completion(status,error);
             }
