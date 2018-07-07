@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol RegistrationServiceProtocol {
+    func registerUser(user : User , completion :@escaping (Bool,String?) -> Void)
+}

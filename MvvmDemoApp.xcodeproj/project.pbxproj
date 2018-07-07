@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7521C11120F0897B00E656D8 /* RegistrationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521C11020F0897B00E656D8 /* RegistrationServiceProtocol.swift */; };
+		7521C11320F08A2000E656D8 /* WebServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521C11220F08A2000E656D8 /* WebServiceProtocol.swift */; };
+		7521C11520F08A4B00E656D8 /* AuthenticationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521C11420F08A4B00E656D8 /* AuthenticationServiceProtocol.swift */; };
+		7521C11720F08B8900E656D8 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521C11620F08B8900E656D8 /* DataServiceProtocol.swift */; };
 		7539E2C620E91C3B007C53C9 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539E2C520E91C3B007C53C9 /* UserListViewModel.swift */; };
 		7539E2C820E94FE9007C53C9 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539E2C720E94FE9007C53C9 /* UserTableViewCell.swift */; };
 		75449EEC20E99FF40029054E /* FirebaseNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75449EEB20E99FF40029054E /* FirebaseNotificationService.swift */; };
@@ -70,6 +74,10 @@
 
 /* Begin PBXFileReference section */
 		5EB78E6103D83D2EFC09DE2B /* Pods_MvvmDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MvvmDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7521C11020F0897B00E656D8 /* RegistrationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationServiceProtocol.swift; sourceTree = "<group>"; };
+		7521C11220F08A2000E656D8 /* WebServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceProtocol.swift; sourceTree = "<group>"; };
+		7521C11420F08A4B00E656D8 /* AuthenticationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceProtocol.swift; sourceTree = "<group>"; };
+		7521C11620F08B8900E656D8 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProtocol.swift; sourceTree = "<group>"; };
 		7539E2C520E91C3B007C53C9 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		7539E2C720E94FE9007C53C9 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		75449EEB20E99FF40029054E /* FirebaseNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNotificationService.swift; sourceTree = "<group>"; };
@@ -138,6 +146,17 @@
 				5EB78E6103D83D2EFC09DE2B /* Pods_MvvmDemoApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7521C10F20F0895900E656D8 /* ServiceProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				7521C11020F0897B00E656D8 /* RegistrationServiceProtocol.swift */,
+				7521C11220F08A2000E656D8 /* WebServiceProtocol.swift */,
+				7521C11420F08A4B00E656D8 /* AuthenticationServiceProtocol.swift */,
+				7521C11620F08B8900E656D8 /* DataServiceProtocol.swift */,
+			);
+			path = ServiceProtocols;
 			sourceTree = "<group>";
 		};
 		757CCD9F20E8415600AEF212 /* NotificationServiceExtentsion */ = {
@@ -245,6 +264,7 @@
 		75849C1C20E249FD004708F0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7521C10F20F0895900E656D8 /* ServiceProtocols */,
 				757CCDB020E8E1BF00AEF212 /* WebService */,
 				757CCDAC20E8B62000AEF212 /* DeviceServices */,
 			);
@@ -498,6 +518,9 @@
 				757CCDB220E8E1CE00AEF212 /* WebService.swift in Sources */,
 				7594ED8D20E3F12000B3238D /* RegistrationService.swift in Sources */,
 				75849C3120E37D1F004708F0 /* RoundUIButton.swift in Sources */,
+				7521C11320F08A2000E656D8 /* WebServiceProtocol.swift in Sources */,
+				7521C11520F08A4B00E656D8 /* AuthenticationServiceProtocol.swift in Sources */,
+				7521C11120F0897B00E656D8 /* RegistrationServiceProtocol.swift in Sources */,
 				75849C3720E3B4D5004708F0 /* UserViewModel.swift in Sources */,
 				75849C2620E25177004708F0 /* RegistrationViewModel.swift in Sources */,
 				75849C3520E3A597004708F0 /* LoginViewModel.swift in Sources */,
@@ -506,6 +529,7 @@
 				757CCDAE20E8BC8F00AEF212 /* FIRDatabaseService.swift in Sources */,
 				7594ED8E20E3F12000B3238D /* FirebaseHandler.swift in Sources */,
 				757CCDB420E8EBE300AEF212 /* FIRUserManagementService.swift in Sources */,
+				7521C11720F08B8900E656D8 /* DataServiceProtocol.swift in Sources */,
 				7594ED9220E4206F00B3238D /* AlertControllerService.swift in Sources */,
 				75849C2920E252E3004708F0 /* User.swift in Sources */,
 				7594ED8C20E3F12000B3238D /* AuthenticationService.swift in Sources */,
@@ -717,7 +741,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64KGZ4D3NY;
 				INFOPLIST_FILE = MvvmDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -739,7 +763,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64KGZ4D3NY;
 				INFOPLIST_FILE = MvvmDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

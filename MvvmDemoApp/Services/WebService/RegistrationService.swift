@@ -7,11 +7,8 @@
 //
 
 import Foundation
-import FirebaseAuth
-import SwiftKeychainWrapper
 
-
-class RegistrationService {
+class RegistrationService : RegistrationServiceProtocol {
     
     private(set) static var instance = RegistrationService();
     

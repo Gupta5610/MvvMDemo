@@ -12,7 +12,7 @@ target 'MvvmDemoApp' do
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
   pod 'SwiftKeychainWrapper'
- # pod 'Fabric', '~> 1.7.7'
- # pod 'Crashlytics', '~> 3.10.2'
+  pod 'Fabric', '~> 1.7.7'
+  pod 'Crashlytics', '~> 3.10.2'
 
 end

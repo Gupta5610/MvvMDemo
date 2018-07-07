@@ -33,7 +33,7 @@ class FIRNotificationService {
         Messaging.messaging().subscribe(toTopic: topic.rawValue)
     }
     
-    func unSubscribe(to topic : SubscriptionTopic){
+    func unSubscribe(from topic : SubscriptionTopic){
         Messaging.messaging().unsubscribe(fromTopic: topic.rawValue)
     }
     

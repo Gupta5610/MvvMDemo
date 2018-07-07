@@ -39,12 +39,15 @@ class FirebaseHandler {
     
     func observe(databaseReference : String , completion : @escaping ([String : Any]?) -> (Void)){
         FIRDatabaseService.instance.observe(FIRDatabaseReference.init(with: databaseReference)!) { (dataSnapshot) -> (Void) in
-            
             completion(dataSnapshot?.value as! [String : Any])
         }
     }
     
     func subscribe(to topic : String){
         FIRNotificationService.instance.subscribe(to: SubscriptionTopic.init(string: topic)!)
+    }
+    
+    func unSubscribe(from topic : String){
+        FIRNotificationService.instance.unSubscribe(from: SubscriptionTopic.init(string: topic)!)
     }
 }

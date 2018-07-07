@@ -33,7 +33,6 @@ class FIRDatabaseService {
         
         self.reference(databaseReference).observe(.value, with: {
             snapshot in
-            print(snapshot.value)
             completion(snapshot)
         })
     }

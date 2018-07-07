@@ -16,9 +16,9 @@ class RegistrationViewModel
     var phoneNumber = Dynamic<String>("")
     var repeatPassword = Dynamic<String>("")
     var errorMessage = Dynamic<String>("")
-    var registrationService : RegistrationService!
+    var registrationService : RegistrationServiceProtocol!
     
-    init(registrationService : RegistrationService) {
+    init(registrationService : RegistrationServiceProtocol) {
         self.registrationService = registrationService;
     }
 

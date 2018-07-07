@@ -8,9 +8,10 @@
 
 import Foundation
 
-class DataService {
+class DataService : DataServiceProtocol {
     
     public private(set) static var instance = DataService()
+    
     
     func post(user : User , to databseReference : String){
         var userParameter = [String : String]()

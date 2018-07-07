@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol AuthenticationServiceProtocol {
+    func AuthenticateUser(user : User , completion : @escaping (Bool,String?) -> Void )
+}

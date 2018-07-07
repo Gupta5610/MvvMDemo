@@ -42,7 +42,7 @@ extension UserListVC : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserListTableViewCell") as? UserTableViewCell
-        var userViewModel = self.userListViewModel.userList[indexPath.row]
+        let userViewModel = self.userListViewModel.userList[indexPath.row]
         cell?.configure(email: userViewModel.email!, phoneNumber: userViewModel.phoneNumber!)
         return cell!
     }

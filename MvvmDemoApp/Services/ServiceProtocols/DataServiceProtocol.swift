@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol DataServiceProtocol {
+    func post(user : User , to databseReference : String)
+    func observeUsers(from databaseReference : String , completion : @escaping ([User]?) -> (Void))
+}

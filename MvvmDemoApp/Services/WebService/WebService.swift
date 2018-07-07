@@ -9,10 +9,10 @@
 import Foundation
 
 
-class WebService {
+class WebService : WebServiceProtocol {
     public private(set) static var instance = WebService();
     
-    public func AuthenticateUser(user : User , completion : @escaping (Bool,String?) -> Void ){
+    func AuthenticateUser(user : User , completion : @escaping (Bool,String?) -> Void ){
         FirebaseHandler.instance.singIn(userName: user.email, password: user.password, completion: { (status,error) in
             completion(status,error);
             
@@ -49,6 +49,10 @@ class WebService {
     
     func subscribeNotification(to topic : String){
         FirebaseHandler.instance.subscribe(to: topic)
+    }
+    
+    func unSubscribeNotification(from topic : String){
+        FirebaseHandler.instance.unSubscribe(from : topic)
     }
     
 }

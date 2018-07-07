@@ -14,10 +14,10 @@ class LoginViewModel {
     var password = Dynamic<String>("")
     
     var dataService : DataService!
-    var authenticationService : AuthenticationService!
+    var authenticationService : AuthenticationServiceProtocol!
     var errorMessage = Dynamic<String>("")
     
-    init(authenticationService : AuthenticationService) {
+    init(authenticationService : AuthenticationServiceProtocol) {
         self.authenticationService = authenticationService
     }
     
