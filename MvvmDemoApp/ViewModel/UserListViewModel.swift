@@ -10,7 +10,13 @@ import Foundation
 
 class UserListViewModel {
     
-    var userList = [UserViewModel]()
+    var delegate : UserListVCProtocol?
+    
+    var userList = [UserViewModel](){
+        didSet{
+            delegate?.updateTableView()
+        }
+    }
     var dataService : DataServiceProtocol!
     
     init(dataService : DataServiceProtocol) {

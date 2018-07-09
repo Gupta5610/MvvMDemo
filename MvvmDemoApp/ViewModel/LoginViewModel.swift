@@ -10,12 +10,30 @@ import Foundation
 
 class LoginViewModel {
     
-    var email = Dynamic<String>("")
-    var password = Dynamic<String>("")
+    var email : String!{
+        didSet{
+            self.delegate?.updateEmailTextField(with: email)
+        }
+    }
+    
+    var password : String!{
+        didSet{
+            self.delegate?.updatePasswordTextFeild(with: password)
+        }
+    }
+    
+    var errorMessage : String!{
+        didSet{
+            self.delegate?.updateErrorLabel(with: errorMessage)
+        }
+    }
+    
     
     var dataService : DataService!
     var authenticationService : AuthenticationServiceProtocol!
-    var errorMessage = Dynamic<String>("")
+    
+    
+    var delegate : LoginVCProtocol?
     
     init(authenticationService : AuthenticationServiceProtocol) {
         self.authenticationService = authenticationService
@@ -28,8 +46,8 @@ class LoginViewModel {
             isValid,error,errorCode  in
             
             if !isValid {
-                self.errorMessage.value = error!
-                self.password.value = ""
+                self.errorMessage = error!
+                self.password = ""
                 completion(isValid,errorCode)
             }else{
                 let user = userViewModel.createUser()
@@ -39,8 +57,8 @@ class LoginViewModel {
                     
                     var code : LoginErrorCode? = errorCode
                     if !isValid {
-                        self.errorMessage.value = ErrorMessages.InvalidEmailandPassword
-                        self.password.value = ""
+                        self.errorMessage = ErrorMessages.InvalidEmailandPassword
+                        self.password = ""
                         code = .InvalidEmailandPassword
                     }
                     DispatchQueue.main.async {

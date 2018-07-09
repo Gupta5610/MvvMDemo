@@ -47,3 +47,11 @@ extension UserListVC : UITableViewDataSource {
         return cell!
     }
 }
+
+extension UserListVC : UserListVCProtocol{
+    func updateTableView() {
+        self.tableView.reloadData()
+    }
+}
+
+

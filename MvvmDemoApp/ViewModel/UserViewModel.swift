@@ -24,15 +24,15 @@ class UserViewModel{
     }
     
     init(registrationViewModel : RegistrationViewModel){
-        self.email = registrationViewModel.userEmail.value
-        self.password = registrationViewModel.password.value
-        self.phoneNumber = registrationViewModel.phoneNumber.value
-        self.repeatPassword = registrationViewModel.repeatPassword.value
+        self.email = registrationViewModel.userEmail
+        self.password = registrationViewModel.password
+        self.phoneNumber = registrationViewModel.phoneNumber
+        self.repeatPassword = registrationViewModel.repeatPassword
     }
     
     init(loginViewModel : LoginViewModel) {
-        self.email = loginViewModel.email.value
-        self.password = loginViewModel.password.value
+        self.email = loginViewModel.email
+        self.password = loginViewModel.password
     }
     
     func createUser() -> User {

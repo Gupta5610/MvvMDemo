@@ -21,6 +21,10 @@
 		75714AE920F327C70023C20B /* mockWebService .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AE820F327C70023C20B /* mockWebService .swift */; };
 		75714AEB20F32AFD0023C20B /* AuthenticationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AEA20F32AFD0023C20B /* AuthenticationServiceTest.swift */; };
 		75714AED20F32DFA0023C20B /* RegistrationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AEC20F32DFA0023C20B /* RegistrationServiceTest.swift */; };
+		75714AEF20F363E00023C20B /* LoginVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AEE20F363E00023C20B /* LoginVCProtocol.swift */; };
+		75714AF120F367480023C20B /* UserManagementBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AF020F367480023C20B /* UserManagementBaseProtocol.swift */; };
+		75714AF320F3678D0023C20B /* RegistrationVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AF220F3678D0023C20B /* RegistrationVCProtocol.swift */; };
+		75714AF620F3AC140023C20B /* UserListVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AF520F3AC140023C20B /* UserListVCProtocol.swift */; };
 		757CCD9820E823F600AEF212 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CCD9720E823F600AEF212 /* NotificationService.swift */; };
 		757CCDA120E8415600AEF212 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CCDA020E8415600AEF212 /* NotificationService.swift */; };
 		757CCDA520E8415600AEF212 /* NotificationServiceExtentsion.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 757CCD9E20E8415500AEF212 /* NotificationServiceExtentsion.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -101,6 +105,10 @@
 		75714AE820F327C70023C20B /* mockWebService .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "mockWebService .swift"; sourceTree = "<group>"; };
 		75714AEA20F32AFD0023C20B /* AuthenticationServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceTest.swift; sourceTree = "<group>"; };
 		75714AEC20F32DFA0023C20B /* RegistrationServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationServiceTest.swift; sourceTree = "<group>"; };
+		75714AEE20F363E00023C20B /* LoginVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCProtocol.swift; sourceTree = "<group>"; };
+		75714AF020F367480023C20B /* UserManagementBaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementBaseProtocol.swift; sourceTree = "<group>"; };
+		75714AF220F3678D0023C20B /* RegistrationVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVCProtocol.swift; sourceTree = "<group>"; };
+		75714AF520F3AC140023C20B /* UserListVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVCProtocol.swift; sourceTree = "<group>"; };
 		757CCD9720E823F600AEF212 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		757CCD9920E833EB00AEF212 /* MvvmDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MvvmDemoApp.entitlements; sourceTree = "<group>"; };
 		757CCD9E20E8415500AEF212 /* NotificationServiceExtentsion.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceExtentsion.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +230,17 @@
 			path = MockClasses;
 			sourceTree = "<group>";
 		};
+		75714AF420F369F90023C20B /* ControllerProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				75714AEE20F363E00023C20B /* LoginVCProtocol.swift */,
+				75714AF020F367480023C20B /* UserManagementBaseProtocol.swift */,
+				75714AF220F3678D0023C20B /* RegistrationVCProtocol.swift */,
+				75714AF520F3AC140023C20B /* UserListVCProtocol.swift */,
+			);
+			path = ControllerProtocols;
+			sourceTree = "<group>";
+		};
 		757CCD9F20E8415600AEF212 /* NotificationServiceExtentsion */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +338,7 @@
 		75849C1B20E249F6004708F0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				75714AF420F369F90023C20B /* ControllerProtocols */,
 				75849C0B20E23B22004708F0 /* RegistrationVC.swift */,
 				75849C3220E3A4B1004708F0 /* LoginVC.swift */,
 				7594ED9320E4CA2F00B3238D /* UserListVC.swift */,
@@ -669,6 +689,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75714AEF20F363E00023C20B /* LoginVCProtocol.swift in Sources */,
 				75849C3A20E3BB68004708F0 /* ValidationUtility.swift in Sources */,
 				7539E2C820E94FE9007C53C9 /* UserTableViewCell.swift in Sources */,
 				7594ED9420E4CA2F00B3238D /* UserListVC.swift in Sources */,
@@ -680,6 +701,7 @@
 				7521C11120F0897B00E656D8 /* RegistrationServiceProtocol.swift in Sources */,
 				75849C3720E3B4D5004708F0 /* UserViewModel.swift in Sources */,
 				75849C2620E25177004708F0 /* RegistrationViewModel.swift in Sources */,
+				75714AF120F367480023C20B /* UserManagementBaseProtocol.swift in Sources */,
 				75849C3520E3A597004708F0 /* LoginViewModel.swift in Sources */,
 				75849C0C20E23B22004708F0 /* RegistrationVC.swift in Sources */,
 				7539E2C620E91C3B007C53C9 /* UserListViewModel.swift in Sources */,
@@ -697,8 +719,10 @@
 				75849C2120E24AC9004708F0 /* BindingUITextField.swift in Sources */,
 				75849C3C20E3C293004708F0 /* RegistrationErrorCode.swift in Sources */,
 				75449EEC20E99FF40029054E /* FirebaseNotificationService.swift in Sources */,
+				75714AF320F3678D0023C20B /* RegistrationVCProtocol.swift in Sources */,
 				75849C2420E24C58004708F0 /* DynamicType.swift in Sources */,
 				75849C2B20E25B48004708F0 /* Repository.swift in Sources */,
+				75714AF620F3AC140023C20B /* UserListVCProtocol.swift in Sources */,
 				75849C2D20E351AB004708F0 /* DataService.swift in Sources */,
 				7594ED9020E4198F00B3238D /* LoginErrorCode.swift in Sources */,
 			);

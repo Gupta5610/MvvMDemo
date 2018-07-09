@@ -12,12 +12,10 @@ import UIKit
 
 class RegistrationVC: UIViewController {
     
-    
-
     @IBOutlet weak var emailTextField: BindingUITextField!{
         didSet{
             emailTextField.bind {
-                self.registrationViewModel.userEmail.value = $0
+                self.registrationViewModel.userEmail = $0
             }
         }
     }
@@ -25,7 +23,7 @@ class RegistrationVC: UIViewController {
     @IBOutlet weak var numberTextField: BindingUITextField!{
         didSet{
             numberTextField.bind({
-                self.registrationViewModel.phoneNumber.value = $0
+                self.registrationViewModel.phoneNumber = $0
             })
         }
     }
@@ -33,7 +31,7 @@ class RegistrationVC: UIViewController {
     @IBOutlet weak var passwordTextField: BindingUITextField!{
         didSet{
             passwordTextField.bind({
-                self.registrationViewModel.password.value = $0
+                self.registrationViewModel.password = $0
             })
         }
     }
@@ -42,7 +40,7 @@ class RegistrationVC: UIViewController {
     @IBOutlet weak var repeatpasswordTextField: BindingUITextField!{
         didSet{
             repeatpasswordTextField.bind({
-                self.registrationViewModel.repeatPassword.value = $0
+                self.registrationViewModel.repeatPassword = $0
             })
         }
     }
@@ -59,22 +57,7 @@ class RegistrationVC: UIViewController {
         super.viewDidLoad()
         self.registrationViewModel = RegistrationViewModel(registrationService: RegistrationService.instance)
         self.activityIndicator.isHidden = true;
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.registrationViewModel.errorMessage.bind(completetion: {
-            self.errorMessageLabel.text = $0
-        })
-        
-        self.registrationViewModel.password.bind(completetion: {
-            self.passwordTextField.text = $0
-        })
-        
-        self.registrationViewModel.repeatPassword.bind(completetion: {
-            self.repeatpasswordTextField.text = $0
-        })
+        self.registrationViewModel.delegate = self
     }
     
     
@@ -115,7 +98,28 @@ class RegistrationVC: UIViewController {
             self.repeatpasswordTextField.ErrorShake()
         }
     }
+}
+
+
+extension RegistrationVC : RegistrationVCProtocol {
+    func updatePhoneNumberTextField(with number: String) {
+        self.numberTextField.text = number
+    }
     
+    func updateRepeatPasswordTextField(with password: String) {
+        self.repeatpasswordTextField.text = password
+    }
     
+    func updateEmailTextField(with email: String) {
+        self.emailTextField.text = email
+    }
+    
+    func updatePasswordTextFeild(with password: String) {
+        self.passwordTextField.text = password
+    }
+    
+    func updateErrorLabel(with errorMessage: String) {
+        self.errorMessageLabel.text = errorMessage
+    }
 }
 

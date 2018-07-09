@@ -17,7 +17,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var emailTextField: BindingUITextField!{
         didSet{
             emailTextField.bind({
-                self.loginViewModel.email.value = $0
+                self.loginViewModel.email = $0
             })
         }
     }
@@ -25,7 +25,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordTextField: BindingUITextField!{
         didSet{
             passwordTextField.bind({
-                self.loginViewModel.password.value = $0
+                self.loginViewModel.password = $0
             })
         }
     }
@@ -37,23 +37,10 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         self.loginViewModel = LoginViewModel(authenticationService: AuthenticationService.instance)
         self.activityIndicator.isHidden = true;
+        self.loginViewModel.delegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.loginViewModel.email.bind(completetion: {
-            self.emailTextField.text = $0
-        })
-        
-        self.loginViewModel.password.bind(completetion: {
-            self.passwordTextField.text = $0
-        })
-        
-        self.loginViewModel.errorMessage.bind(completetion: {
-            self.errorMessageLabel.text = $0
-        })
-    }
-    
+   
     @IBAction func loginBtnPressed(_ sender: Any) {
         self.view.isUserInteractionEnabled = false
         self.activityIndicator.isHidden = false
@@ -99,5 +86,19 @@ extension LoginVC {
             self.errorMessageLabel.isHidden = true
             self.present(AlertControllerService.createAlertViewController(errorMessage: ErrorMessages.InvalidEmailandPassword), animated: true, completion: nil)
         }
+    }
+}
+
+extension LoginVC : LoginVCProtocol{
+    func updateEmailTextField(with email: String) {
+        self.emailTextField.text = email
+    }
+    
+    func updatePasswordTextFeild(with password: String) {
+        self.passwordTextField.text = password
+    }
+    
+    func updateErrorLabel(with errorMessage: String) {
+        self.errorMessageLabel.text = errorMessage
     }
 }

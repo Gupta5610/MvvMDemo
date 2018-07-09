@@ -11,12 +11,39 @@ import Foundation
 
 class RegistrationViewModel
 {
-    var userEmail = Dynamic<String>("")
-    var password = Dynamic<String>("")
-    var phoneNumber = Dynamic<String>("")
-    var repeatPassword = Dynamic<String>("")
-    var errorMessage = Dynamic<String>("")
+    var userEmail : String!{
+        didSet{
+            self.delegate?.updateEmailTextField(with: userEmail)
+        }
+    }
+    
+    var password : String!{
+        didSet{
+            self.delegate?.updatePasswordTextFeild(with: password)
+        }
+    }
+    
+
+    var phoneNumber : String!{
+        didSet{
+            self.delegate?.updatePhoneNumberTextField(with: phoneNumber)
+        }
+    }
+    
+    var repeatPassword : String!{
+        didSet{
+            self.delegate?.updateRepeatPasswordTextField(with: repeatPassword)
+        }
+    }
+    
+    var errorMessage : String!{
+        didSet{
+            self.delegate?.updateErrorLabel(with: errorMessage)
+        }
+    }
+    
     var registrationService : RegistrationServiceProtocol!
+    var delegate : RegistrationVCProtocol?
     
     init(registrationService : RegistrationServiceProtocol) {
         self.registrationService = registrationService;
@@ -31,16 +58,16 @@ class RegistrationViewModel
             if !isValid{
                 switch errorCode! {
                 case .InvalidEmail:
-                    self.userEmail.value = ""
+                    self.userEmail = ""
                 case .InvalidPassword:
-                    self.password.value = ""
+                    self.password = ""
                 case .PasswordMatch:
-                    self.password.value = ""
-                    self.repeatPassword.value = ""
+                    self.password = ""
+                    self.repeatPassword = ""
                 case .InvalidPhoneNumber:
-                    self.phoneNumber.value = ""
+                    self.phoneNumber = ""
                 }
-               self.errorMessage.value = description!
+               self.errorMessage = description!
                compeletion(false,errorCode)
             }else{
             let user = userViewModel.createUser()
