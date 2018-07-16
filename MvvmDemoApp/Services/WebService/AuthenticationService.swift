@@ -19,7 +19,7 @@ class AuthenticationService : AuthenticationServiceProtocol {
     
     private var webService : WebServiceProtocol!
     
-    public func AuthenticateUser(user : User , completion : @escaping (Bool,String?) -> Void ){
+    public func AuthenticateUser(user : User , completion : @escaping (Bool,Error?) -> Void ){
         webService.AuthenticateUser(user:user, completion: { (status,error) in
                 completion(status,error);
         })

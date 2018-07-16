@@ -41,13 +41,17 @@ class RegistrationVC: UIViewController {
         didSet{
             repeatpasswordTextField.bind({
                 self.registrationViewModel.repeatPassword = $0
-            })
+           })
         }
     }
+    
+    @IBOutlet weak var userImageView : RoundImagePickerView!
     
     
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var imagePickerViewController : UIImagePickerController!
     
     
     
@@ -58,6 +62,13 @@ class RegistrationVC: UIViewController {
         self.registrationViewModel = RegistrationViewModel(registrationService: RegistrationService.instance)
         self.activityIndicator.isHidden = true;
         self.registrationViewModel.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+        self.userImageView.addGestureRecognizer(tapGesture)
+        self.userImageView.isUserInteractionEnabled = true
     }
     
     
@@ -84,6 +95,14 @@ class RegistrationVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func selectImage(){
+        self.imagePickerViewController = UIImagePickerController()
+        imagePickerViewController.sourceType = .photoLibrary
+        imagePickerViewController.delegate = self
+        imagePickerViewController.allowsEditing = true
+        self.present(imagePickerViewController, animated: true, completion: nil)
+    }
+    
     
     func textFieldErrorUI(registrationErrorCode : RegistrationErrorCode){
         switch registrationErrorCode {
@@ -100,8 +119,18 @@ class RegistrationVC: UIViewController {
     }
 }
 
+extension RegistrationVC : UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        self.registrationViewModel.userImage = (info[UIImagePickerControllerEditedImage] as! UIImage)
+        self.imagePickerViewController.dismiss(animated: true, completion: nil)
+    }
+    
+   
+}
 
-extension RegistrationVC : RegistrationVCProtocol {
+
+extension RegistrationVC : RegistrationDelegate {
     func updatePhoneNumberTextField(with number: String) {
         self.numberTextField.text = number
     }
@@ -120,6 +149,10 @@ extension RegistrationVC : RegistrationVCProtocol {
     
     func updateErrorLabel(with errorMessage: String) {
         self.errorMessageLabel.text = errorMessage
+    }
+    
+    func updateImageView(with image: UIImage) {
+        self.userImageView.image = image
     }
 }
 

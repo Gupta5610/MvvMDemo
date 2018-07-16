@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 
 class UserViewModel{
@@ -16,6 +16,7 @@ class UserViewModel{
     var password : String?
     var phoneNumber : String?
     var repeatPassword : String?
+    var userImage : UIImage?
     
     init(user : User ) {
         self.email = user.email
@@ -28,6 +29,7 @@ class UserViewModel{
         self.password = registrationViewModel.password
         self.phoneNumber = registrationViewModel.phoneNumber
         self.repeatPassword = registrationViewModel.repeatPassword
+        self.userImage = registrationViewModel.userImage
     }
     
     init(loginViewModel : LoginViewModel) {
@@ -36,7 +38,7 @@ class UserViewModel{
     }
     
     func createUser() -> User {
-        return User(email: self.email!, password: self.password!, phoneNumber: self.phoneNumber)
+        return User(email: self.email!, password: self.password!, phoneNumber: self.phoneNumber,image : self.userImage)
     }
     
     func isValidLogin(completion : @escaping (Bool,String?,LoginErrorCode?) -> ()){

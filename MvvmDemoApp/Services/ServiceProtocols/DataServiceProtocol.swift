@@ -9,6 +9,7 @@
 import Foundation
 
 protocol DataServiceProtocol {
-    func post(user : User , to databseReference : String)
+    func post(user : User , to databseReference : String,completion : @escaping () -> (Void))
     func observeUsers(from databaseReference : String , completion : @escaping ([User]?) -> (Void))
+    func getImageDataForUserWith(email : String , completion : @escaping (Data?,Error?) -> (Void))
 }

@@ -1,5 +1,5 @@
 //
-//  UserListVCProtocol.swift
+//  LoginVCProtocol.swift
 //  MvvmDemoApp
 //
 //  Created by ashish on 09/07/18.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol UserListVCProtocol {
-    func updateTableView()
+protocol LoginVCDelegate : UserManagementBaseDelegate {
+    
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 
-protocol UserManagementBaseProtocol {
+protocol UserManagementBaseDelegate {
     func updateEmailTextField(with email: String)
     func updatePasswordTextFeild(with password: String)
     func updateErrorLabel(with errorMessage: String)

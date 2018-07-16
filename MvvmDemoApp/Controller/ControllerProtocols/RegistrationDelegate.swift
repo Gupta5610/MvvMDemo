@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
-protocol RegistrationVCProtocol : UserManagementBaseProtocol {
+protocol RegistrationDelegate : UserManagementBaseDelegate {
     func updatePhoneNumberTextField(with number : String)
     func updateRepeatPasswordTextField(with password: String)
+    func updateImageView(with image:UIImage)
 }

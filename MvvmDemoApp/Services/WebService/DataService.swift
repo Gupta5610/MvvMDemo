@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class DataService : DataServiceProtocol {
     
@@ -18,11 +19,14 @@ class DataService : DataServiceProtocol {
     
     private var webService : WebServiceProtocol!
     
-    func post(user : User , to databseReference : String){
+    func post(user : User , to databseReference : String,completion : @escaping () -> (Void)){
         var userParameter = [String : String]()
         userParameter["email"] = user.email!
         userParameter["number"] = user.phoneNumber!
-        webService.post(parameter: userParameter, to: databseReference)
+        let data = UIImagePNGRepresentation(user.userImage!)
+        webService.post(parameter: userParameter,imageData: data, to: databseReference){
+            completion()
+        }
     }
     
     func observeUsers(from databaseReference : String , completion : @escaping ([User]?) -> (Void)){
@@ -40,5 +44,10 @@ class DataService : DataServiceProtocol {
         }
         
     }
-   
+    
+    func getImageDataForUserWith(email : String , completion : @escaping (Data?,Error?) -> (Void)){
+        webService.downloadFile(with: email) { (data,error) -> (Void) in
+            completion(data,error)
+        }
+    }
 }

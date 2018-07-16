@@ -14,22 +14,28 @@
 		7521C11320F08A2000E656D8 /* WebServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521C11220F08A2000E656D8 /* WebServiceProtocol.swift */; };
 		7521C11520F08A4B00E656D8 /* AuthenticationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521C11420F08A4B00E656D8 /* AuthenticationServiceProtocol.swift */; };
 		7521C11720F08B8900E656D8 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521C11620F08B8900E656D8 /* DataServiceProtocol.swift */; };
+		7537F1E420F875470059E11B /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537F1E320F875470059E11B /* UserCellViewModel.swift */; };
+		7537F1E520F898880059E11B /* ImageDownloaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AFC20F48A710023C20B /* ImageDownloaderService.swift */; };
+		753849AB20FB6F0100FF37B1 /* UserDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753849AA20FB6F0100FF37B1 /* UserDetailVC.swift */; };
+		753849AD20FB70F300FF37B1 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753849AC20FB70F300FF37B1 /* UserDetailViewModel.swift */; };
+		753849AF20FB7CFA00FF37B1 /* UserDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753849AE20FB7CFA00FF37B1 /* UserDetailViewDelegate.swift */; };
 		7539E2C620E91C3B007C53C9 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539E2C520E91C3B007C53C9 /* UserListViewModel.swift */; };
 		7539E2C820E94FE9007C53C9 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539E2C720E94FE9007C53C9 /* UserTableViewCell.swift */; };
 		75449EEC20E99FF40029054E /* FirebaseNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75449EEB20E99FF40029054E /* FirebaseNotificationService.swift */; };
+		75596E9820F51EAE00C244AE /* profilePic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 75596E9720F51EAE00C244AE /* profilePic.jpeg */; };
 		75714AE720F31F4A0023C20B /* MockFirebaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AE620F31F4A0023C20B /* MockFirebaseHandler.swift */; };
-		75714AE920F327C70023C20B /* mockWebService .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AE820F327C70023C20B /* mockWebService .swift */; };
 		75714AEB20F32AFD0023C20B /* AuthenticationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AEA20F32AFD0023C20B /* AuthenticationServiceTest.swift */; };
 		75714AED20F32DFA0023C20B /* RegistrationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AEC20F32DFA0023C20B /* RegistrationServiceTest.swift */; };
-		75714AEF20F363E00023C20B /* LoginVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AEE20F363E00023C20B /* LoginVCProtocol.swift */; };
-		75714AF120F367480023C20B /* UserManagementBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AF020F367480023C20B /* UserManagementBaseProtocol.swift */; };
-		75714AF320F3678D0023C20B /* RegistrationVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AF220F3678D0023C20B /* RegistrationVCProtocol.swift */; };
-		75714AF620F3AC140023C20B /* UserListVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AF520F3AC140023C20B /* UserListVCProtocol.swift */; };
+		75714AEF20F363E00023C20B /* LoginVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AEE20F363E00023C20B /* LoginVCDelegate.swift */; };
+		75714AF120F367480023C20B /* UserManagementBaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AF020F367480023C20B /* UserManagementBaseDelegate.swift */; };
+		75714AF320F3678D0023C20B /* RegistrationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AF220F3678D0023C20B /* RegistrationDelegate.swift */; };
+		75714AF620F3AC140023C20B /* UserListVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AF520F3AC140023C20B /* UserListVCDelegate.swift */; };
+		75714AFB20F48A020023C20B /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CCDB120E8E1CE00AEF212 /* WebService.swift */; };
+		75714AFD20F48A710023C20B /* ImageDownloaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75714AFC20F48A710023C20B /* ImageDownloaderService.swift */; };
 		757CCD9820E823F600AEF212 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CCD9720E823F600AEF212 /* NotificationService.swift */; };
 		757CCDA120E8415600AEF212 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CCDA020E8415600AEF212 /* NotificationService.swift */; };
 		757CCDA520E8415600AEF212 /* NotificationServiceExtentsion.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 757CCD9E20E8415500AEF212 /* NotificationServiceExtentsion.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		757CCDAE20E8BC8F00AEF212 /* FIRDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CCDAD20E8BC8F00AEF212 /* FIRDatabaseService.swift */; };
-		757CCDB220E8E1CE00AEF212 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CCDB120E8E1CE00AEF212 /* WebService.swift */; };
 		757CCDB420E8EBE300AEF212 /* FIRUserManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CCDB320E8EBE300AEF212 /* FIRUserManagementService.swift */; };
 		75849C0A20E23B22004708F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75849C0920E23B22004708F0 /* AppDelegate.swift */; };
 		75849C0C20E23B22004708F0 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75849C0B20E23B22004708F0 /* RegistrationVC.swift */; };
@@ -56,6 +62,7 @@
 		7594ED9020E4198F00B3238D /* LoginErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7594ED8F20E4198F00B3238D /* LoginErrorCode.swift */; };
 		7594ED9220E4206F00B3238D /* AlertControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7594ED9120E4206F00B3238D /* AlertControllerService.swift */; };
 		7594ED9420E4CA2F00B3238D /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7594ED9320E4CA2F00B3238D /* UserListVC.swift */; };
+		75D854F620F5C1F600D8D35E /* RoundImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D854F520F5C1F600D8D35E /* RoundImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,17 +105,22 @@
 		7521C11220F08A2000E656D8 /* WebServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceProtocol.swift; sourceTree = "<group>"; };
 		7521C11420F08A4B00E656D8 /* AuthenticationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceProtocol.swift; sourceTree = "<group>"; };
 		7521C11620F08B8900E656D8 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProtocol.swift; sourceTree = "<group>"; };
+		7537F1E320F875470059E11B /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
+		753849AA20FB6F0100FF37B1 /* UserDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVC.swift; sourceTree = "<group>"; };
+		753849AC20FB70F300FF37B1 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		753849AE20FB7CFA00FF37B1 /* UserDetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewDelegate.swift; sourceTree = "<group>"; };
 		7539E2C520E91C3B007C53C9 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		7539E2C720E94FE9007C53C9 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		75449EEB20E99FF40029054E /* FirebaseNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNotificationService.swift; sourceTree = "<group>"; };
+		75596E9720F51EAE00C244AE /* profilePic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = profilePic.jpeg; path = Assets.xcassets/profilePic.jpeg; sourceTree = "<group>"; };
 		75714AE620F31F4A0023C20B /* MockFirebaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirebaseHandler.swift; sourceTree = "<group>"; };
-		75714AE820F327C70023C20B /* mockWebService .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "mockWebService .swift"; sourceTree = "<group>"; };
 		75714AEA20F32AFD0023C20B /* AuthenticationServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceTest.swift; sourceTree = "<group>"; };
 		75714AEC20F32DFA0023C20B /* RegistrationServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationServiceTest.swift; sourceTree = "<group>"; };
-		75714AEE20F363E00023C20B /* LoginVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCProtocol.swift; sourceTree = "<group>"; };
-		75714AF020F367480023C20B /* UserManagementBaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementBaseProtocol.swift; sourceTree = "<group>"; };
-		75714AF220F3678D0023C20B /* RegistrationVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVCProtocol.swift; sourceTree = "<group>"; };
-		75714AF520F3AC140023C20B /* UserListVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVCProtocol.swift; sourceTree = "<group>"; };
+		75714AEE20F363E00023C20B /* LoginVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCDelegate.swift; sourceTree = "<group>"; };
+		75714AF020F367480023C20B /* UserManagementBaseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementBaseDelegate.swift; sourceTree = "<group>"; };
+		75714AF220F3678D0023C20B /* RegistrationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDelegate.swift; sourceTree = "<group>"; };
+		75714AF520F3AC140023C20B /* UserListVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVCDelegate.swift; sourceTree = "<group>"; };
+		75714AFC20F48A710023C20B /* ImageDownloaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderService.swift; sourceTree = "<group>"; };
 		757CCD9720E823F600AEF212 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		757CCD9920E833EB00AEF212 /* MvvmDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MvvmDemoApp.entitlements; sourceTree = "<group>"; };
 		757CCD9E20E8415500AEF212 /* NotificationServiceExtentsion.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceExtentsion.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +157,7 @@
 		7594ED8F20E4198F00B3238D /* LoginErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorCode.swift; sourceTree = "<group>"; };
 		7594ED9120E4206F00B3238D /* AlertControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerService.swift; sourceTree = "<group>"; };
 		7594ED9320E4CA2F00B3238D /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
+		75D854F520F5C1F600D8D35E /* RoundImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImagePickerView.swift; sourceTree = "<group>"; };
 		779BF78ADEF8399574A81CDC /* Pods_MvvmDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MvvmDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7917A22E09C0F7D8E7FED9C6 /* Pods-MvvmDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MvvmDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MvvmDemoApp/Pods-MvvmDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7A151008BE58F507BC3C8B3A /* Pods_MvvmDemoApp_MvvmDemoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MvvmDemoApp_MvvmDemoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,7 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				75714AE620F31F4A0023C20B /* MockFirebaseHandler.swift */,
-				75714AE820F327C70023C20B /* mockWebService .swift */,
 			);
 			path = MockClasses;
 			sourceTree = "<group>";
@@ -233,10 +245,11 @@
 		75714AF420F369F90023C20B /* ControllerProtocols */ = {
 			isa = PBXGroup;
 			children = (
-				75714AEE20F363E00023C20B /* LoginVCProtocol.swift */,
-				75714AF020F367480023C20B /* UserManagementBaseProtocol.swift */,
-				75714AF220F3678D0023C20B /* RegistrationVCProtocol.swift */,
-				75714AF520F3AC140023C20B /* UserListVCProtocol.swift */,
+				75714AEE20F363E00023C20B /* LoginVCDelegate.swift */,
+				75714AF020F367480023C20B /* UserManagementBaseDelegate.swift */,
+				75714AF220F3678D0023C20B /* RegistrationDelegate.swift */,
+				75714AF520F3AC140023C20B /* UserListVCDelegate.swift */,
+				753849AE20FB7CFA00FF37B1 /* UserDetailViewDelegate.swift */,
 			);
 			path = ControllerProtocols;
 			sourceTree = "<group>";
@@ -247,6 +260,7 @@
 				757CCDAA20E8416500AEF212 /* NotificationServiceExtentsion.entitlements */,
 				757CCDA020E8415600AEF212 /* NotificationService.swift */,
 				757CCDA220E8415600AEF212 /* Info.plist */,
+				75714AFC20F48A710023C20B /* ImageDownloaderService.swift */,
 			);
 			path = NotificationServiceExtentsion;
 			sourceTree = "<group>";
@@ -329,6 +343,7 @@
 				75849C0920E23B22004708F0 /* AppDelegate.swift */,
 				75849C0D20E23B22004708F0 /* Main.storyboard */,
 				75849C1020E23B24004708F0 /* Assets.xcassets */,
+				75596E9720F51EAE00C244AE /* profilePic.jpeg */,
 				75849C1220E23B24004708F0 /* LaunchScreen.storyboard */,
 				75849C1520E23B24004708F0 /* Info.plist */,
 			);
@@ -342,6 +357,7 @@
 				75849C0B20E23B22004708F0 /* RegistrationVC.swift */,
 				75849C3220E3A4B1004708F0 /* LoginVC.swift */,
 				7594ED9320E4CA2F00B3238D /* UserListVC.swift */,
+				753849AA20FB6F0100FF37B1 /* UserDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -362,6 +378,7 @@
 				75849C2020E24AC9004708F0 /* BindingUITextField.swift */,
 				75849C3020E37D1F004708F0 /* RoundUIButton.swift */,
 				7539E2C720E94FE9007C53C9 /* UserTableViewCell.swift */,
+				75D854F520F5C1F600D8D35E /* RoundImagePickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +390,8 @@
 				75849C3420E3A597004708F0 /* LoginViewModel.swift */,
 				75849C3620E3B4D5004708F0 /* UserViewModel.swift */,
 				7539E2C520E91C3B007C53C9 /* UserListViewModel.swift */,
+				7537F1E320F875470059E11B /* UserCellViewModel.swift */,
+				753849AC20FB70F300FF37B1 /* UserDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -559,6 +578,7 @@
 				75849C1420E23B24004708F0 /* LaunchScreen.storyboard in Resources */,
 				7594ED8820E3E7E200B3238D /* GoogleService-Info.plist in Resources */,
 				75849C1120E23B24004708F0 /* Assets.xcassets in Resources */,
+				75596E9820F51EAE00C244AE /* profilePic.jpeg in Resources */,
 				75849C0F20E23B22004708F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,7 +691,6 @@
 			files = (
 				7508527920F1461F00E87180 /* WebServiceTest.swift in Sources */,
 				75714AE720F31F4A0023C20B /* MockFirebaseHandler.swift in Sources */,
-				75714AE920F327C70023C20B /* mockWebService .swift in Sources */,
 				75714AEB20F32AFD0023C20B /* AuthenticationServiceTest.swift in Sources */,
 				75714AED20F32DFA0023C20B /* RegistrationServiceTest.swift in Sources */,
 			);
@@ -681,6 +700,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75714AFD20F48A710023C20B /* ImageDownloaderService.swift in Sources */,
 				757CCDA120E8415600AEF212 /* NotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,40 +709,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75714AEF20F363E00023C20B /* LoginVCProtocol.swift in Sources */,
+				75714AEF20F363E00023C20B /* LoginVCDelegate.swift in Sources */,
 				75849C3A20E3BB68004708F0 /* ValidationUtility.swift in Sources */,
 				7539E2C820E94FE9007C53C9 /* UserTableViewCell.swift in Sources */,
+				753849AD20FB70F300FF37B1 /* UserDetailViewModel.swift in Sources */,
 				7594ED9420E4CA2F00B3238D /* UserListVC.swift in Sources */,
-				757CCDB220E8E1CE00AEF212 /* WebService.swift in Sources */,
 				7594ED8D20E3F12000B3238D /* RegistrationService.swift in Sources */,
+				7537F1E520F898880059E11B /* ImageDownloaderService.swift in Sources */,
 				75849C3120E37D1F004708F0 /* RoundUIButton.swift in Sources */,
 				7521C11320F08A2000E656D8 /* WebServiceProtocol.swift in Sources */,
 				7521C11520F08A4B00E656D8 /* AuthenticationServiceProtocol.swift in Sources */,
 				7521C11120F0897B00E656D8 /* RegistrationServiceProtocol.swift in Sources */,
 				75849C3720E3B4D5004708F0 /* UserViewModel.swift in Sources */,
 				75849C2620E25177004708F0 /* RegistrationViewModel.swift in Sources */,
-				75714AF120F367480023C20B /* UserManagementBaseProtocol.swift in Sources */,
+				75714AF120F367480023C20B /* UserManagementBaseDelegate.swift in Sources */,
 				75849C3520E3A597004708F0 /* LoginViewModel.swift in Sources */,
+				75D854F620F5C1F600D8D35E /* RoundImagePickerView.swift in Sources */,
 				75849C0C20E23B22004708F0 /* RegistrationVC.swift in Sources */,
 				7539E2C620E91C3B007C53C9 /* UserListViewModel.swift in Sources */,
 				757CCDAE20E8BC8F00AEF212 /* FIRDatabaseService.swift in Sources */,
 				7594ED8E20E3F12000B3238D /* FirebaseHandler.swift in Sources */,
 				757CCDB420E8EBE300AEF212 /* FIRUserManagementService.swift in Sources */,
+				7537F1E420F875470059E11B /* UserCellViewModel.swift in Sources */,
+				75714AFB20F48A020023C20B /* WebService.swift in Sources */,
 				7521C11720F08B8900E656D8 /* DataServiceProtocol.swift in Sources */,
 				7594ED9220E4206F00B3238D /* AlertControllerService.swift in Sources */,
+				753849AB20FB6F0100FF37B1 /* UserDetailVC.swift in Sources */,
 				75849C2920E252E3004708F0 /* User.swift in Sources */,
 				7594ED8C20E3F12000B3238D /* AuthenticationService.swift in Sources */,
 				757CCD9820E823F600AEF212 /* NotificationService.swift in Sources */,
 				75849C3320E3A4B1004708F0 /* LoginVC.swift in Sources */,
+				753849AF20FB7CFA00FF37B1 /* UserDetailViewDelegate.swift in Sources */,
 				75849C3E20E3C34C004708F0 /* ErrorMessages.swift in Sources */,
 				75849C0A20E23B22004708F0 /* AppDelegate.swift in Sources */,
 				75849C2120E24AC9004708F0 /* BindingUITextField.swift in Sources */,
 				75849C3C20E3C293004708F0 /* RegistrationErrorCode.swift in Sources */,
 				75449EEC20E99FF40029054E /* FirebaseNotificationService.swift in Sources */,
-				75714AF320F3678D0023C20B /* RegistrationVCProtocol.swift in Sources */,
+				75714AF320F3678D0023C20B /* RegistrationDelegate.swift in Sources */,
 				75849C2420E24C58004708F0 /* DynamicType.swift in Sources */,
 				75849C2B20E25B48004708F0 /* Repository.swift in Sources */,
-				75714AF620F3AC140023C20B /* UserListVCProtocol.swift in Sources */,
+				75714AF620F3AC140023C20B /* UserListVCDelegate.swift in Sources */,
 				75849C2D20E351AB004708F0 /* DataService.swift in Sources */,
 				7594ED9020E4198F00B3238D /* LoginErrorCode.swift in Sources */,
 			);
@@ -812,6 +838,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64KGZ4D3NY;
 				INFOPLIST_FILE = NotificationServiceExtentsion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -832,6 +859,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64KGZ4D3NY;
 				INFOPLIST_FILE = NotificationServiceExtentsion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -969,7 +997,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64KGZ4D3NY;
 				INFOPLIST_FILE = MvvmDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -991,7 +1019,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64KGZ4D3NY;
 				INFOPLIST_FILE = MvvmDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

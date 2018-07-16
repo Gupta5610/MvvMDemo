@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 class RegistrationViewModel
@@ -42,8 +43,14 @@ class RegistrationViewModel
         }
     }
     
+    var userImage : UIImage?{
+        didSet{
+            self.delegate?.updateImageView(with: userImage!)
+        }
+    }
+    
     var registrationService : RegistrationServiceProtocol!
-    var delegate : RegistrationVCProtocol?
+    var delegate : RegistrationDelegate?
     
     init(registrationService : RegistrationServiceProtocol) {
         self.registrationService = registrationService;
@@ -74,14 +81,14 @@ class RegistrationViewModel
             self.registrationService.registerUser(user: user, completion: {
                 registered,errorMessage in
                 if registered {
-                 DataService.instance.post(user: user, to: "users")
-                    DispatchQueue.main.async {
-                        compeletion(true,nil)
-                    }
+                    DataService.instance.post(user: user, to: "users",completion: {
+                        DispatchQueue.main.async {
+                            compeletion(true,nil)
+                        }
+                    })
                 }else {
                     compeletion(false,nil)
                 }
-                
             })
             
             }

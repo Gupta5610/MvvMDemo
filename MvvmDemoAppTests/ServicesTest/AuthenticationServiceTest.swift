@@ -11,11 +11,11 @@ import XCTest
 
 class AuthenticationServiceTest : XCTestCase {
     
-    var webService : MockWebService!
+    var webService : WebServiceProtocol!
     
     override func setUp() {
         super.setUp()
-        self.webService = MockWebService()
+        self.webService = WebService.init(firebaseHandler: MockFirebaseHandler())
     }
     
     override func tearDown() {

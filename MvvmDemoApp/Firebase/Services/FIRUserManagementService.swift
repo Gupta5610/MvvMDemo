@@ -13,70 +13,68 @@ class FIRUsermanagementService {
     
     public private(set) static var instance = FIRUsermanagementService()
     
-    func singIn(userName : String?,password : String? , completion :@escaping (Bool,String?) -> Void){
+    func singIn(userName : String?,password : String? , completion :@escaping (Bool,Error?) -> Void){
         if let userName = userName , let password = password , !userName.isEmpty,!password.isEmpty{
             Auth.auth().signIn(withEmail: userName, password: password,  completion: {  (user, error) in
                 if let error = error {
                     print(error);
-                    completion(false,error.localizedDescription);
+                    completion(false,error);
                 }else{
                     if user != nil {
                         completion(true,nil);
                     }else{
-                        completion(false,"ErrorMessages.unSuccessfullSignIn");
+                        completion(false,error);
                     }
                 }
             })
         }else{
-            completion(false,"Please Enter a Username and password");
+            completion(false,nil);
         }
     }
     
-    func signInWith(credentials : AuthCredential ,completion :@escaping (Bool,String?) -> Void){
+    func signInWith(credentials : AuthCredential ,completion :@escaping (Bool,Error?) -> Void){
         
         Auth.auth().signInAndRetrieveData(with: credentials) { (user, error) in
             if let error = error {
                 print(error);
-                completion(false,error.localizedDescription);
+                completion(false,error);
             }else{
                 if user != nil {
-                    completion(true,nil);
+                    completion(true,error);
                 }else{
-                    completion(false,"ErrorMessages.unSuccessfullSignIn");
+                    completion(false,error);
                 }
             }
         }
     }
     
-    func registerUser(userName : String?,password : String? , completetion : @escaping (Bool,String?) -> Void){
+    func registerUser(userName : String?,password : String? , completetion : @escaping (Bool,Error?) -> Void){
         if let userName = userName , let password = password , !userName.isEmpty,!password.isEmpty {
             Auth.auth().createUser(withEmail: userName, password: password, completion: {
                 (user,error) in
                 
                 if let error = error {
                     print(error)
-                    completetion(false,error.localizedDescription)
+                    completetion(false,error)
                 }else{
                     if user != nil {
-                        print("ErrorMessages.successfullRegistered");
-                        completetion(true,nil)
+                        completetion(true,error)
                     }else{
-                        print("ErrorMessages.unSuccessfullRegistered");
-                        completetion(false,"ErrorMessages.unSuccessfullRegistered")
+                        completetion(false,error)
                     }
                 }
             })
         }
     }
     
-    func signOut(completion : @escaping (Bool,String?) -> Void){
+    func signOut(completion : @escaping (Bool,Error?) -> Void){
         
         DispatchQueue.global(qos: .background).async {
             do{
                 try Auth.auth().signOut();
                 completion(true,nil)
             }catch{
-                completion(true,"ErrorMessages.unSuccessfullSignOut");
+                completion(false,error);
             }
         }
     }

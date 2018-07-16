@@ -18,9 +18,21 @@ class NotificationService: UNNotificationServiceExtension {
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
         
         if let bestAttemptContent = bestAttemptContent {
-            // Modify the notification content here...
-            bestAttemptContent.title = "\(bestAttemptContent.title) [modified]"
+            guard let imageUrlString = bestAttemptContent.userInfo["ImageUrl"] as? String else {
+                contentHandler(request.content)
+                return
+            }
             
+            ImageDownloaderService.instance.downloadImage(at: imageUrlString) { (url) -> (Void) in
+                
+                do {
+                let attachment = try UNNotificationAttachment(identifier: "Image", url: url, options: nil)
+                    bestAttemptContent.attachments = [attachment]
+                    contentHandler(bestAttemptContent)
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
             contentHandler(bestAttemptContent)
         }
     }

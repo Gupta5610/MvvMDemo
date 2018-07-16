@@ -15,7 +15,7 @@ class RegistrationServiceTest : XCTestCase{
     
     override func setUp() {
         super.setUp()
-        self.webService = MockWebService()
+        self.webService = WebService.init(firebaseHandler: MockFirebaseHandler())
     }
     
     override func tearDown() {

@@ -11,6 +11,7 @@ target 'MvvmDemoApp' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
+  pod 'Firebase/Storage'
   pod 'SwiftKeychainWrapper'
  
 

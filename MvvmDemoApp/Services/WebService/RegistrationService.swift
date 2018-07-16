@@ -18,11 +18,9 @@ class RegistrationService : RegistrationServiceProtocol {
     
     private var webService : WebServiceProtocol!
     
-    func registerUser(user : User , completion :@escaping (Bool,String?) -> Void){
+    func registerUser(user : User , completion :@escaping (Bool,Error?) -> Void){
         webService.registerUser(user : user) { (status,error) in
-            DispatchQueue.main.async {
                 completion(status,error);
-            }
         }
     }
 }

@@ -10,6 +10,8 @@ import Foundation
 
 
 class WebService : WebServiceProtocol {
+   
+
     public private(set) static var instance = WebService(firebaseHandler: FirebaseHandler.instance);
     
     var firebaseHandler : FirebaseProtocol!
@@ -18,14 +20,14 @@ class WebService : WebServiceProtocol {
         self.firebaseHandler = firebaseHandler
     }
     
-    func AuthenticateUser(user : User , completion : @escaping (Bool,String?) -> Void ){
+    func AuthenticateUser(user : User , completion : @escaping (Bool,Error?) -> Void ){
         firebaseHandler.singIn(userName: user.email, password: user.password, completion: { (status,error) in
             completion(status,error);
             
         })
     }
     
-    func registerUser(user : User , completion :@escaping (Bool,String?) -> Void){
+    func registerUser(user : User , completion :@escaping (Bool,Error?) -> Void){
         firebaseHandler.registerUser(userName: user.email, password: user.password) { (status,error) in
             DispatchQueue.main.async {
                 completion(status,error);
@@ -33,7 +35,7 @@ class WebService : WebServiceProtocol {
         }
     }
     
-    func signOut(completion : @escaping (Bool,String?) -> Void){
+    func signOut(completion : @escaping (Bool,Error?) -> Void){
         firebaseHandler.signOut { (status, error) in
             DispatchQueue.main.async {
                 completion(status,error);
@@ -41,8 +43,27 @@ class WebService : WebServiceProtocol {
         }
     }
     
-    func post(parameter : [String : Any] , to  databaseReference: String ){
-        firebaseHandler.post(parameter: parameter, to: databaseReference)
+    func post(parameter : [String : Any], imageData : Data? , to  databaseReference: String , completion : @escaping () -> () ){
+        
+        var metaData = [String : String]()
+        
+        metaData["name"] = parameter["email"] as! String
+        metaData["content-type"] = "image/png"
+        
+        firebaseHandler.uploadFileToDatabaseStorage(with: imageData!, andwith: metaData) { (urlPath,error) -> (Void) in
+            var postParameter = [String : String]()
+           
+            if urlPath != nil {
+            parameter.forEach({ (arg) in
+                let (key, Value) = arg
+                postParameter[key] = Value as? String
+            })
+            postParameter["ImageUrl"] = urlPath
+            self.firebaseHandler.post(parameter: postParameter, to: databaseReference)
+            }
+            
+            completion()
+        }
     }
     
     func observe(databaseReference : String , completion : @escaping ([String : Any]?) -> (Void)){
@@ -53,6 +74,12 @@ class WebService : WebServiceProtocol {
         }
     }
     
+    func downloadFile(with name : String , completion : @escaping (Data?,Error?) -> (Void)){
+        firebaseHandler.downloadFileFromStorage(with: name) { (data,error) -> (Void) in
+            completion(data,error)
+        }
+    }
+    
     func subscribeNotification(to topic : String){
         firebaseHandler.subscribe(to: topic)
     }
@@ -60,5 +87,4 @@ class WebService : WebServiceProtocol {
     func unSubscribeNotification(from topic : String){
         firebaseHandler.unSubscribe(from : topic)
     }
-    
 }

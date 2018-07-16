@@ -10,9 +10,11 @@ import Foundation
 
 class UserListViewModel {
     
-    var delegate : UserListVCProtocol?
+    var delegate : UserListVCDelegate?
     
-    var userList = [UserViewModel](){
+    var cache = NSCache<NSString,NSData>()
+
+    var userList = [UserCellViewModel](){
         didSet{
             delegate?.updateTableView()
         }
@@ -27,9 +29,9 @@ class UserListViewModel {
         self.dataService.observeUsers(from: "users") { (userList) -> (Void) in
             if let userList = userList {
                 
-                self.userList = [UserViewModel]()
+                self.userList = [UserCellViewModel]()
                 userList.forEach({ (user) in
-                    self.userList.append(UserViewModel.init(user: user))
+                    self.userList.append(UserCellViewModel.init(user: user))
                 })
                     completion()
             }
@@ -46,5 +48,23 @@ class UserListViewModel {
             }
         }
     }
+    
+    
+    func downloadImageWithName(name : String,completion : @escaping (Data?) -> (Void)){
+        
+        if let data = self.cache.object(forKey: name as NSString ){
+            completion(data as Data)
+        }else{
+            dataService.getImageDataForUserWith(email: name, completion: { (data, error) -> (Void) in
+                if let data = data  {
+                    DispatchQueue.main.async {
+                        self.cache.setObject(data as NSData, forKey: name as NSString)
+                        completion(data)
+                    }
+                }
+            })
+                
+        }
+      }
+    }    
 
-}

@@ -89,7 +89,7 @@ extension LoginVC {
     }
 }
 
-extension LoginVC : LoginVCProtocol{
+extension LoginVC : LoginVCDelegate{
     func updateEmailTextField(with email: String) {
         self.emailTextField.text = email
     }

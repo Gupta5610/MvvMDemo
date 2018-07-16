@@ -33,7 +33,7 @@ class LoginViewModel {
     var authenticationService : AuthenticationServiceProtocol!
     
     
-    var delegate : LoginVCProtocol?
+    var delegate : LoginVCDelegate?
     
     init(authenticationService : AuthenticationServiceProtocol) {
         self.authenticationService = authenticationService
